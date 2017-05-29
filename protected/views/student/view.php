@@ -1,33 +1,78 @@
-<?php
-/* @var $this StudentController */
-/* @var $model Student */
-
-$this->breadcrumbs=array(
-	'Students'=>array('index'),
-	$model->NAME,
-);
-
-$this->menu=array(
-	array('label'=>'List Student', 'url'=>array('index')),
-	array('label'=>'Create Student', 'url'=>array('create')),
-	array('label'=>'Update Student', 'url'=>array('update', 'id'=>$model->ID)),
-	array('label'=>'Delete Student', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->ID),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Student', 'url'=>array('admin')),
-);
-?>
-
-<h1>View Student #<?php echo $model->ID; ?></h1>
-
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'ID',
-		'NAME',
-		'FATHER',
-		'MOTHER',
-		'ADDRESS',
-		'PHONE',
-		'REG_ID',
-		'ROLL_NO',
-	),
-)); ?>
+<div class="container-fluid">
+	<header class="section-header">
+		<div class="tbl">
+			<div class="tbl-row">
+				<div class="tbl-cell">
+					<h2><?php echo $model->NAME?> Details</h2>
+					<div class="subtitle"></div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="box-typical box-typical-padding">
+		<div class="form-group row">
+			<label class='col-sm-2 form-control-label'>NAME</label>
+			<div class="col-sm-10">
+				<p class="form-control-static">
+					<span><?php echo $model->NAME;?></span>
+				</p>
+			</div>
+		</div>
+		<div class="form-group row">
+			<label class='col-sm-2 form-control-label'>COURSE</label>
+			<div class="col-sm-10">
+				<p class="form-control-static">
+					<span><?php echo Course::model()->findByPK(StudentCourse::model()->find('STUDENT_ID='.$model->ID.' AND STATUS=1')->COURSE_ID)->NAME;?></span>
+				</p>
+			</div>
+		</div>
+		<div class="form-group row">
+			<label class='col-sm-2 form-control-label'>FATHER NAME</label>
+			<div class="col-sm-10">
+				<p class="form-control-static">
+					<span><?php echo $model->FATHER;?></span>
+				</p>
+			</div>
+		</div>
+		<div class="form-group row">
+			<label class='col-sm-2 form-control-label'>MOTHER NAME</label>
+			<div class="col-sm-10">
+				<p class="form-control-static">
+					<span><?php echo $model->MOTHER;?></span>
+				</p>
+			</div>
+		</div>
+		<div class="form-group row">
+			<label class='col-sm-2 form-control-label'>ADDRESS</label>
+			<div class="col-sm-10">
+				<p class="form-control-static">
+					<span><?php echo $model->ADDRESS;?></span>
+				</p>
+			</div>
+		</div>
+		<div class="form-group row">
+			<label class='col-sm-2 form-control-label'>PHONE</label>
+			<div class="col-sm-10">
+				<p class="form-control-static">
+					<span><?php echo $model->PHONE;?></span>
+				</p>
+			</div>
+		</div>
+		<div class="form-group row">
+			<label class='col-sm-2 form-control-label'>REGISTRATION ID</label>
+			<div class="col-sm-10">
+				<p class="form-control-static">
+					<span><?php echo $model->REG_ID;?></span>
+				</p>
+			</div>
+		</div>
+		<div class="form-group row">
+			<label class='col-sm-2 form-control-label'>ROLL NO</label>
+			<div class="col-sm-10">
+				<p class="form-control-static">
+					<span><?php echo $model->ROLL_NO;?></span>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>

@@ -47,6 +47,15 @@
 			<label class='col-sm-2 form-control-label'></label>
 			<div class="col-sm-10">
 				<p class="form-control-static">
+					<img src="images/upload_student.png">
+				</p>
+			</div>
+		</div>
+		
+		<div class="form-group row">
+			<label class='col-sm-2 form-control-label'></label>
+			<div class="col-sm-10">
+				<p class="form-control-static">
 					<?php echo CHtml::submitButton('Upload', array('class'=>'btn btn-inline')); ?>
 				</p>
 			</div>

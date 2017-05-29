@@ -1,27 +1,22 @@
-<?php
-/* @var $this SubjectController */
-/* @var $model Subject */
-
-$this->breadcrumbs=array(
-	'Subjects'=>array('index'),
-	$model->NAME,
-);
-
-$this->menu=array(
-	array('label'=>'List Subject', 'url'=>array('index')),
-	array('label'=>'Create Subject', 'url'=>array('create')),
-	array('label'=>'Update Subject', 'url'=>array('update', 'id'=>$model->ID)),
-	array('label'=>'Delete Subject', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->ID),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Subject', 'url'=>array('admin')),
-);
-?>
-
-<h1>View Subject #<?php echo $model->ID; ?></h1>
-
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'ID',
-		'NAME',
-	),
-)); ?>
+<div class="container-fluid">
+	<header class="section-header">
+		<div class="tbl">
+			<div class="tbl-row">
+				<div class="tbl-cell">
+					<h2><?php echo $model->NAME?> Details</h2>
+					<div class="subtitle"></div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="box-typical box-typical-padding">
+		<div class="form-group row">
+			<label class='col-sm-2 form-control-label'>NAME</label>
+			<div class="col-sm-10">
+				<p class="form-control-static">
+					<span><?php echo $model->NAME;?></span>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>

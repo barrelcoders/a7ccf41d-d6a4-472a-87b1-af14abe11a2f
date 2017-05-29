@@ -1,21 +1,15 @@
-<?php
-/* @var $this CourseController */
-/* @var $model Course */
-
-$this->breadcrumbs=array(
-	'Courses'=>array('index'),
-	$model->NAME=>array('view','id'=>$model->ID),
-	'Update',
-);
-
-$this->menu=array(
-	array('label'=>'List Course', 'url'=>array('index')),
-	array('label'=>'Create Course', 'url'=>array('create')),
-	array('label'=>'View Course', 'url'=>array('view', 'id'=>$model->ID)),
-	array('label'=>'Manage Course', 'url'=>array('admin')),
-);
-?>
-
-<h1>Update Course <?php echo $model->ID; ?></h1>
-
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<div class="container-fluid">
+	<header class="section-header">
+		<div class="tbl">
+			<div class="tbl-row">
+				<div class="tbl-cell">
+					<h2>Update <?php echo $model->NAME; ?></h2>
+					<div class="subtitle"></div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="box-typical box-typical-padding">
+		<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+	</div>
+</div>

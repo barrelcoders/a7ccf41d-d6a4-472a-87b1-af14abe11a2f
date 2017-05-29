@@ -1,21 +1,15 @@
-<?php
-/* @var $this StudentController */
-/* @var $model Student */
-
-$this->breadcrumbs=array(
-	'Students'=>array('index'),
-	$model->NAME=>array('view','id'=>$model->ID),
-	'Update',
-);
-
-$this->menu=array(
-	array('label'=>'List Student', 'url'=>array('index')),
-	array('label'=>'Create Student', 'url'=>array('create')),
-	array('label'=>'View Student', 'url'=>array('view', 'id'=>$model->ID)),
-	array('label'=>'Manage Student', 'url'=>array('admin')),
-);
-?>
-
-<h1>Update Student <?php echo $model->ID; ?></h1>
-
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<div class="container-fluid">
+	<header class="section-header">
+		<div class="tbl">
+			<div class="tbl-row">
+				<div class="tbl-cell">
+					<h2>Update <?php echo $model->NAME; ?></h2>
+					<div class="subtitle"></div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="box-typical box-typical-padding">
+		<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+	</div>
+</div>
