@@ -45,14 +45,12 @@
                             
                             for(var j=0; j<=data[i].MARKS.length-1; j++){
                                 if(j==0){
-                                    content +="<td>"+data[i].MARKS[j].SUBJECT_NAME+"<input type='hidden' name='StudentMarks[Student]["+data[i].ID+"][Subject]["+j+"]Id' value='"+data[i].ID+"'><input type='hidden' name='StudentMarks[Student]["+data[i].ID+"][Subject]["+j+"][SUBJECT_ID]' value='"+data[i].MARKS[j].ID+"'/></td>\
-                                       <td><input type='text' name='StudentMarks[Student]["+data[i].ID+"][Subject]["+j+"][MAX_MARKS]' value='"+data[i].MARKS[j].MAX_MARKS+"'/></td>\
-                                       <td><input type='text' name='StudentMarks[Student]["+data[i].ID+"][Subject]["+j+"][OBTAINED_MARKS]' value='"+data[i].MARKS[j].OBT_MARKS+"'/></td>";
+                                    content +="<td colspan='2'>"+data[i].MARKS[j].SUBJECT_NAME+"<input type='hidden' name='StudentMarks[Student]["+data[i].ID+"][Subject]["+j+"]Id' value='"+data[i].ID+"'><input type='hidden' name='StudentMarks[Student]["+data[i].ID+"][Subject]["+j+"][SUBJECT_ID]' value='"+data[i].MARKS[j].ID+"'/></td>\
+                                       <td><input type='text' name='StudentMarks[Student]["+data[i].ID+"][Subject]["+j+"][OBTAINED_GRADES]' value='"+data[i].MARKS[j].OBT_GRADES+"'/></td>";
                                 }
                                 else{
-                                    content +="</tr><tr><td>"+data[i].MARKS[j].SUBJECT_NAME+"<input type='hidden' name='StudentMarks[Student]["+data[i].ID+"][Subject]["+j+"]Id' value='"+data[i].ID+"'><input type='hidden' name='StudentMarks[Student]["+data[i].ID+"][Subject]["+j+"][SUBJECT_ID]' value='"+data[i].MARKS[j].ID+"'/></td>\
-                                       <td><input type='text' name='StudentMarks[Student]["+data[i].ID+"][Subject]["+j+"][MAX_MARKS]' value='"+data[i].MARKS[j].MAX_MARKS+"'/></td>\
-                                       <td><input type='text' name='StudentMarks[Student]["+data[i].ID+"][Subject]["+j+"][OBTAINED_MARKS]' value='"+data[i].MARKS[j].OBT_MARKS+"'/></td></tr>";
+                                    content +="</tr><tr><td  colspan='2'>"+data[i].MARKS[j].SUBJECT_NAME+"<input type='hidden' name='StudentMarks[Student]["+data[i].ID+"][Subject]["+j+"]Id' value='"+data[i].ID+"'><input type='hidden' name='StudentMarks[Student]["+data[i].ID+"][Subject]["+j+"][SUBJECT_ID]' value='"+data[i].MARKS[j].ID+"'/></td>\
+                                       <td><input type='text' name='StudentMarks[Student]["+data[i].ID+"][Subject]["+j+"][OBTAINED_GRADES]' value='"+data[i].MARKS[j].OBT_GRADES+"'/></td></tr>";
                                 }
                             }
                         }

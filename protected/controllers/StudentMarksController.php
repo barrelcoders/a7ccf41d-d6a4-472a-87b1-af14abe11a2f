@@ -76,16 +76,14 @@ class StudentMarksController extends Controller
                 foreach($subjects as $subject){
                     if(StudentMarks::model()->exists('STUDENT_ID='.$student_id.' AND SUBJECT_ID='.$subject['SUBJECT_ID'])){
                         $studentMarks = $model->find('STUDENT_ID='.$student_id.' AND SUBJECT_ID='.$subject['SUBJECT_ID']);
-                        $studentMarks->MAX_MARKS = $subject['MAX_MARKS'];
-                        $studentMarks->OBTAINED_MARKS = $subject['OBTAINED_MARKS'];
+                        $studentMarks->OBTAINED_GRADE = $subject['OBTAINED_GRADES'];
                         $studentMarks->save(false);
                     }
                     else{
                         $studentMarks = new StudentMarks;
                         $studentMarks->STUDENT_ID = $student_id;
                         $studentMarks->SUBJECT_ID = $subject['SUBJECT_ID'];
-                        $studentMarks->MAX_MARKS = $subject['MAX_MARKS'];
-                        $studentMarks->OBTAINED_MARKS = $subject['OBTAINED_MARKS'];
+                        $studentMarks->OBTAINED_GRADE = $subject['OBTAINED_GRADES'];
                         $studentMarks->save(false);   
                     }
                 }
@@ -113,8 +111,7 @@ class StudentMarksController extends Controller
              array_push($marks, array(
                     "ID"=>$subject->SUBJECT_ID,
                     "SUBJECT_NAME"=>Subject::model()->findByPK($subject->SUBJECT_ID)->NAME,
-                    "MAX_MARKS"=>StudentMarks::model()->exists('STUDENT_ID='.$STUDENT_ID.' AND SUBJECT_ID='.$subject->SUBJECT_ID) ? StudentMarks::model()->find('STUDENT_ID='.$STUDENT_ID.' AND SUBJECT_ID='.$subject->SUBJECT_ID)->MAX_MARKS : 0,
-                    "OBT_MARKS"=>StudentMarks::model()->exists('STUDENT_ID='.$STUDENT_ID.' AND SUBJECT_ID='.$subject->SUBJECT_ID) ? StudentMarks::model()->find('STUDENT_ID='.$STUDENT_ID.' AND SUBJECT_ID='.$subject->SUBJECT_ID)->OBTAINED_MARKS : 0,
+                    "OBT_GRADES"=>StudentMarks::model()->exists('STUDENT_ID='.$STUDENT_ID.' AND SUBJECT_ID='.$subject->SUBJECT_ID) ? StudentMarks::model()->find('STUDENT_ID='.$STUDENT_ID.' AND SUBJECT_ID='.$subject->SUBJECT_ID)->OBTAINED_GRADE : '',
               ));
             }
             $student['MARKS'] = $marks;

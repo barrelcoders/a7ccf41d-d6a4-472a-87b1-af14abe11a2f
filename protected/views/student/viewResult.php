@@ -48,28 +48,17 @@
 							<td>&nbsp;</td>
 						</tr>
 						<tr>
-							<td><b>SUBJECT</b></td>
-							<td><b>MAX MARKS</b></td>
-							<td><b>OBTAINED MARKS</b></td>
+							<td colspan="2"><b>SUBJECT</b></td>
+							<td><b>OBTAINED GRADES</b></td>
 						</tr>
 						<?php 
-							$totalMaxMarks = 0;
-							$totalObtMarks = 0;
 							foreach($this->result['MARKS'] as $mark){ 
-								$totalMaxMarks += $mark['MAX_MARKS']; 
-								$totalObtMarks += $mark['OBTAINED_MARKS'];
 						?>
 						<tr>
-							<td><?php echo $mark['SUBJECT']?></td>
-							<td><?php echo $mark['MAX_MARKS']?></td>
-							<td><?php echo $mark['OBTAINED_MARKS']?></td>
+							<td colspan="2"><?php echo $mark['SUBJECT']?></td>
+							<td><?php echo $mark['OBTAINED_GRADES']?></td>
 						</tr>
 						<?php } ?>
-						<tr>
-							<td><b>TOTAL</b></td>
-							<td><b><?php echo $totalMaxMarks;?></b></td>
-							<td><b><?php echo $totalObtMarks;?></b></td>
-						</tr>
 					</tbody>
 					</table>
 			<?php

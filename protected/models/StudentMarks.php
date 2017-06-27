@@ -28,11 +28,11 @@ class StudentMarks extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('STUDENT_ID, SUBJECT_ID, MAX_MARKS, OBTAINED_MARKS', 'required'),
-			array('STUDENT_ID, SUBJECT_ID, MAX_MARKS, OBTAINED_MARKS', 'length', 'max'=>10),
+			array('STUDENT_ID, SUBJECT_ID, OBTAINED_GRADE', 'required'),
+			array('STUDENT_ID, SUBJECT_ID, OBTAINED_GRADE', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('ID, STUDENT_ID, SUBJECT_ID, MAX_MARKS, OBTAINED_MARKS', 'safe', 'on'=>'search'),
+			array('ID, STUDENT_ID, SUBJECT_ID, OBTAINED_GRADE', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,8 +56,7 @@ class StudentMarks extends CActiveRecord
 			'ID' => 'ID',
 			'STUDENT_ID' => 'Student',
 			'SUBJECT_ID' => 'Subject',
-			'MAX_MARKS' => 'Max Marks',
-			'OBTAINED_MARKS' => 'Obtained Marks',
+			'OBTAINED_GRADE' => 'Obtained Grade',
 		);
 	}
 
@@ -82,8 +81,7 @@ class StudentMarks extends CActiveRecord
 		$criteria->compare('ID',$this->ID,true);
 		$criteria->compare('STUDENT_ID',$this->STUDENT_ID,true);
 		$criteria->compare('SUBJECT_ID',$this->SUBJECT_ID,true);
-		$criteria->compare('MAX_MARKS',$this->MAX_MARKS,true);
-		$criteria->compare('OBTAINED_MARKS',$this->OBTAINED_MARKS,true);
+		$criteria->compare('OBTAINED_GRADE',$this->OBTAINED_GRADE,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

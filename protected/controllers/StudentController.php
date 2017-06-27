@@ -85,7 +85,7 @@ class StudentController extends Controller
                 foreach($subjects as $subject){
                     $subjectNAME = Subject::model()->findByPk($subject->SUBJECT_ID)->NAME;
                     $marks = StudentMarks::model()->find('STUDENT_ID='.$student->ID.' AND SUBJECT_ID='.$subject->SUBJECT_ID);
-					$markArray = array('SUBJECT'=>$subjectNAME, 'MAX_MARKS'=>$marks->MAX_MARKS, 'OBTAINED_MARKS'=>$marks->OBTAINED_MARKS);
+					$markArray = array('SUBJECT'=>$subjectNAME, 'OBTAINED_GRADES'=>$marks->OBTAINED_GRADE);
 					array_push($marks_array, $markArray);
 				}
 				$this->result["MARKS"] = $marks_array;
